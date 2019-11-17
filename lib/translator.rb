@@ -13,8 +13,8 @@ def load_library(library)
   newFile
 end
 
-def get_japanese_emoticon(YAML, emoticon)
-  
+def get_japanese_emoticon(yaaml, emoticon)
+  file = load_library(yaaml)
 end
 
 def get_english_meaning
