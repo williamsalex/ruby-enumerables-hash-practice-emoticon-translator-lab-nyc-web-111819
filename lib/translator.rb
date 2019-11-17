@@ -4,23 +4,12 @@ def load_library(library)
   file = File.read(library)
   emoticons = YAML.load(file)
   newFile = {}
-  array = Array(emoticons)
   newFile[:get_meaning] = {}
   newFile[:get_emoticon] = {}
   puts emoticons
-  emoticons.each
-  
-  
-  
-  
-  for item in array do
-    if (array.index(item)+1)%3 == 0
-      puts array[array.index(item)-2]
-      newFile[:get_meaning][item] = array[array.index(item)-2]
-    end
-    if (array.index(item)+1)%2 == 0 && (array.index(item)+1)%3 != 0
-      newFile[:get_emoticon][item] = array[array.index(item)+1]
-    end
+  emoticons.each do |key, value|
+    newFile[:get_meaning] = {value[1] => key}
+    newFile[:get_emoticon] = {value[0] => key}
   end
   newFile
 end
