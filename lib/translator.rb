@@ -21,6 +21,10 @@ def get_japanese_emoticon(yaaml, emoticon)
   return "Sorry, that emoticon was not found"
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(yaaml, emoticon)
+  file = load_library(yaaml)
+  if file[:get_meaning].include? emoticon
+    return file[:get_meaning][emoticon]
+  end
+  return "Sorry, that emoticon was not found"
 end
