@@ -7,6 +7,7 @@ def load_library(library)
   array = Array(emoticons)
   newFile[:get_meaning] = {}
   newFile[:get_emoticon] = {}
+  puts emoticons
   for item in array do
     if (array.index(item)+1)%3 == 0
       puts array[array.index(item)-2]
@@ -16,7 +17,6 @@ def load_library(library)
       newFile[:get_emoticon][item] = array[array.index(item)+1]
     end
   end
-  puts newFile[:get_meaning]
   newFile
 end
 
