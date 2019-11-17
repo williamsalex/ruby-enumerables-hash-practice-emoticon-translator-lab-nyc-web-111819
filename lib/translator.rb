@@ -13,7 +13,7 @@ def load_library(library)
   newFile
 end
 
-def get_japanese_emoticon(emoticon)
+def get_japanese_emoticon(YAML, emoticon)
   
 end
 
