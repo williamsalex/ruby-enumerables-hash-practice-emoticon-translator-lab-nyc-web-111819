@@ -6,10 +6,9 @@ def load_library(library)
   newFile = {}
   newFile[:get_meaning] = {}
   newFile[:get_emoticon] = {}
-  puts emoticons
   emoticons.each do |key, value|
-    newFile[:get_meaning] = {value[1] => key}
-    newFile[:get_emoticon] = {value[0] => key}
+    newFile[:get_meaning][value[1]] = key
+    newFile[:get_emoticon][value[0]] = key
   end
   newFile
 end
