@@ -8,7 +8,7 @@ def load_library(library)
   newFile[:get_emoticon] = {}
   emoticons.each do |key, value|
     newFile[:get_meaning][value[1]] = key
-    newFile[:get_emoticon][value[0]] = key
+    newFile[:get_emoticon][value[0]] = value[1]
   end
   newFile
 end
