@@ -3,9 +3,21 @@ require "yaml"
 def load_library(library)
   file = File.read(library)
   emoticons = YAML.load(file)
-  puts emoticons
-  emoticons['get_meaning'] = {emoticons.each{|item| {item[1], item[0]}}}
-  emoticons['get_emoticon'] = {emoticons.each{|item| item[]}
+  newFile = {}
+  array = Array(emoticons)
+  newFile[:get_meaning] = {}
+  newFile[:get_emoticon] = {}
+  for item in array do
+    if (array.index(item)+1)%3 == 0
+      puts array[array.index(item)-2]
+      newFile[:get_meaning][item] = array[array.index(item)-2]
+    end
+    if (array.index(item)+1)%2 == 0 && (array.index(item)+1)%3 != 0
+      newFile[:get_emoticon][item] = array[array.index(item)+1]
+    end
+  end
+  puts newFile[:get_meaning]
+  newFile
 end
 
 def get_japanese_emoticon(emoticon)
