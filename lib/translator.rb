@@ -15,7 +15,7 @@ end
 
 def get_japanese_emoticon(yaaml, emoticon)
   file = load_library(yaaml)
-  puts file
+  return file[:get_emoticon][emoticon]
 end
 
 def get_english_meaning
