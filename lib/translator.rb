@@ -8,6 +8,11 @@ def load_library(library)
   newFile[:get_meaning] = {}
   newFile[:get_emoticon] = {}
   puts emoticons
+  emoticons.each
+  
+  
+  
+  
   for item in array do
     if (array.index(item)+1)%3 == 0
       puts array[array.index(item)-2]
